@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Төлөвлөгөөг олон зүйлээр шүүлтүүрдэн хайж олох боломжтой"
+    />
+    <title>Let's go</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="/logo1.png" />
+    <link rel="stylesheet" href="/let'sGo.css" />
+    <link rel="stylesheet" href="/headerfooter.css" />
+    <link rel="stylesheet" href="/general.css" />
+    <script type="module" src="/favouritePlace.js"></script>
+    <script type="module" src="/add-plan-to-card.js"></script>
+    <script type="module" src="/favouritePlan.js"></script>
+    <script type="module" src="/favourite-count.js"></script>
+    <script type="module" src="/add-place-to-card.js"></script>
+    <script type="module" src="/favouritePlace.js"></script>
+    <script type="module" src="/wc-letsgo-siderbar.js"></script>
+    <script src="/header-footer.js"></script>
+    <script src="/mobile-header.js"></script>
+    <script src="/search.js"></script>
+    <script src="/letsgo.js"></script>
+    <script src="/function.js"></script>
+    <script type="module" src="/favouritePlace.js"></script>
+  </head>
+  <body>
+    <header>
+      <all-header></all-header>
+      <mobile-header></mobile-header>
+    </header>
+    <main>
+        <search-place></search-place>
+       
+      <section class="undsen">
+        <aside>
+          <h2>Filter by:</h2>
+          <hr />
+          <h3>Таны төсөв</h3>
+          <label for="file"
+            >MNT <span>10,000 </span>- MNT <span>700,000+</span></label
+          >
+          <!-- <progress id="file" value="1" max="100"></progress> -->
+          <input
+            class="priceFilter"
+            type="range"
+            id="priceRange"
+            name="priceRange"
+            min="0"
+            max="500"
+            oninput="updatePriceValue(this.value)"
+          />
+ 
+          
+          <!-- <todo-item>Boldoo</todo-item>
+          <todo-item>
+              Boldoo
+              <span slot="description">This is a description.</span>
+          </todo-item> -->
+          <hr />
+          <h3>Од</h3>
+          <ol
+          id="star">
+          <li>
+            <p><input type="checkbox" value="1" aria-label="1" />1-Одтой:</p>
+            <p>19</p>
+          </li>
+          <li>
+            <p><input type="checkbox" value="2" aria-label="2" />2-Одтой:</p>
+            <p>8</p>
+          </li>
+          <li>
+            <p><input type="checkbox" value="3" aria-label="3" />3-Одтой:</p>
+            <p>12</p>
+          </li>
+          <li>
+            <p><input type="checkbox" value="4" aria-label="4" />4-Одтой:</p>
+            <p>26</p>
+          </li>
+          <li>
+            <p><input type="checkbox" value="5" aria-label="5" />5-Одтой:</p>
+            <p>31</p>
+          </li>
+          <li>
+            <p><input type="checkbox" value="0" aria-label="0" />Одгүй:</p>
+            <p>123</p>
+          </li>
+          </ol>
+ 
+          <hr />
+          <h3>Check box</h3>
+          <ol id="detail">
+            <li>
+              <todo-item>Үнэгүй wifi
+                <span slot="description">12</span>
+
+              </todo-item>
+            </li>
+            <li>
+              <todo-item>Vip өрөө
+                <span slot="description">12</span>
+              </todo-item>
+            </li>
+            <li>
+              <todo-item>Машины зогсоол
+                <span slot="description">12</span>
+              </todo-item>
+            </li>
+            <li>
+              <todo-item>Дуу тусгаарлагч
+                <span slot="description">12</span>
+              </todo-item>
+            </li>
+            <li>
+              <todo-item>Микрофон
+                <span slot="description">12</span>
+              </todo-item>
+            </li>
+            <li>
+              <todo-item>Спикер
+                <span slot="description">12</span>
+              </todo-item>
+            </li>
+          </ol>
+          <button class="filterbutton" type="button" onclick="sideFilter()" >LET'S GO</button>
+        </aside>
+       
+        <section class="result">
+          <!-- <h2>Хайлтын илэрц: <span>3</span></h2> -->
+          <favourite-place></favourite-place>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <all-footer></all-footer>
+    </footer>
+  </body>
+</html>

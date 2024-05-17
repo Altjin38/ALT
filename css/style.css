@@ -1,0 +1,171 @@
+@import url(./general.css);
+ 
+  /* Body styles */
+  body {
+      font-family: Pangolin;
+  }
+  /* Main styles */
+  main {
+      width: 85%;
+      margin: auto;
+  }
+   
+  h2 {
+    margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 22px;
+      color: var(--h-color);
+      text-align: center;
+  }
+  h3 {
+      font-size: 20px;
+  }
+   
+  p {
+      color: var(--p-color);
+      font-size: 14px;
+  }
+   
+  /* Slideshow container */
+  .slideshow-container {
+      /* max-height: 39rem; */
+      width: 108.85%;
+      position: relative;
+      margin: auto;
+      & .mySlides {
+          margin-left: -8.5%;
+          & img {
+              height: 42rem;
+              object-fit: cover;
+          }
+      }
+   
+      /* Next & previous buttons */
+      & .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 45%;
+          width: auto;
+          padding: 0.8rem;
+          color: var(--bg-light-color);
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          margin-left:-8.5% ;
+      }
+   
+      /* Position the "next button" to the right */
+      &  .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+   
+      /* On hover, add a black background color with a little bit see-through */
+      & .prev:hover, .next:hover {
+          background-color: var(--bg-dark-color);
+      }    
+  }
+   
+   
+  .allDot {
+      margin-top: -2rem;
+      margin-left: -7rem;
+      & .dot {
+          text-align: center;
+          position: relative;
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          background-color: var(--p-color);
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+      }
+      & .active, .dot:hover {
+          background-color: var(--h-color);
+      }
+  }
+   
+   /* On smaller screens, decrease text size */
+   @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+   
+  /*shineer nemegdsen gazruud*/
+  .newPlaces {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      & .subNewPlaces {
+          display: flex;
+          background-color: var(--bg-light-color);
+          box-shadow: var(--box-shadow);
+          max-width: 500px;
+          border-radius: 20px;
+          & .image {
+              padding: 15px;
+              flex: 1;
+              border-radius: 20px;/* Set a maximum width for the image side */
+              & img{
+                  height: 90%;
+                  width: 90%;
+                  border-radius: 20px;
+              }
+          }
+          & .details {
+              flex: 1;
+              padding: 15px;
+              text-align: center;
+              & button{
+                  margin-top: 2%;
+              }
+             
+          }
+      }
+  }
+  @media (max-width: 1327px) {
+    .placesToRecommend .BigRecommend .details {
+        width:15%;
+        height: 4rem;
+    }
+  }
+ 
+  @media only screen and (max-width: 768px) {
+    /* Add your responsive styles here */
+   
+    /* Example: Adjust the layout of content cards */
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    /* Example: Center the button within its container */
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+    /* Example: Adjust image heights */
+    .content img {
+        max-height: 150px; /* or any other height */
+    }
+ 
+    /* Example: Reduce font sizes */
+    h1, h2, h3, p, .button-container button {
+        font-size: 0.8em;
+    }
+ 
+    /* Example: Modify padding and margins for smaller screen */
+    .content {
+        padding: 10px;
+    }
+    select {
+        font-size: 0.8em; /* Decrease the font size */
+        width: auto; /* Adjust width as needed, or use a specific value */
+        padding: 5px; /* Adjust padding to reduce size */
+    }
+  }

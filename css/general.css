@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+ 
+:root {
+    --main-color: #d761db;
+    --secondary-color: rgb(112, 217, 249);
+    --hover-color:rgb(98, 0, 123);
+    --bg-light-color: #fff;
+    --bg-dark-color:rgb(16, 12, 28);
+    --border-radius: 1rem;
+    --button-border-radius: 1rem;
+    --margin-side: 8rem;
+    --box-shadow: 0.1rem 0.2rem 0.3rem #bdbdbd;
+    --h-color:#333;
+    --p-color: #555;
+    --active-star-color: orange;
+    --deactive-star-color: #ccc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* Body styles */
+body {
+    font-family: Pangolin;
+}
+/*Дэлгэцний гол хэсэг*/
+ 
+/*Blogcard доторх зураг, товч, одны дизайн*/
+article {
+    margin-bottom: 1rem;
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+        & img {
+        max-width: 100%;
+        border-radius: var(--border-radius);
+        }
+        & h3 {
+        font-size: 1.5rem;
+        color: var(--h-color);
+        margin-bottom: 10px;
+        }
+        & .value {
+            font-family: Pangolin;
+            border: none;
+            border-radius: var(--border-radius);
+            background-image: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+            color: var(--bg-light-color);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 2%;
+            padding: 0.7em 0.7em;
+            font-size: 1em;
+            border-radius: 1rem;
+        }
+       
+   
+        & .like{
+            float: right;
+            border: none;
+            background-color: var(--bg-light-color);
+        }
+        & meter{
+            text-align: center;
+            position:relative;
+            appearance: none;
+            color: var(--bg-light-color);
+            background-image: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+            padding: 0.4rem;
+            border-radius: 0.7rem;  
+        }
+}
+meter{
+    height: 1.8rem;
+}
+ 
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--bg-dark-color);
+    }
+}
+.addToCard {
+    background: none;
+    border-radius: 0.5rem;
+    border: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    & i {
+      color: var(--bg-dark-color);
+    }
+  } .addToCard:hover{
+    background-color:var(--p-color);
+  }

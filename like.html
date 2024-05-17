@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Улаанбаатар хот дотроо нэг өдрийг хөгжилтэй өнгөрүүлэх төлөвлөгөөнүүдийг харуулна." />
+    <link rel="stylesheet" href="/like.css" />
+    <link rel="stylesheet" href="/headerfooter.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Like</title>
+    <link rel="icon" type="image/x-icon" href="/logo1.png" />
+    <script src="/function.js"></script>
+    
+</head>
+<body>
+    <header>
+        <all-header></all-header>
+        <mobile-header></mobile-header>
+    </header>
+
+    <main>
+        <section class="name">
+            <h1>Дуртай даа бас л</h1>
+            <h2></h2>
+            <hr />
+            <section class="button"><button onclick="removeAll()">Ингээд л байхгүй</button></section>
+        </section>
+        
+        <section class="plans">
+            <favourite-plan></favourite-plan>
+        </section>
+        <section class="places">
+            <favourite-place></favourite-place>
+        </section>
+
+        <section class="Bugd">
+            <!-- <button class="btn">Бүгдийг харах</button> -->
+            <hr />
+        </section>
+    </main>
+
+    <footer>
+        <all-footer></all-footer>
+    </footer>
+
+    <script src="/header-footer.js" defer></script>
+    <script src="/favourite.js" defer></script>
+    <script type="module" src="/favouritePlan.js" defer></script>
+    <script type="module" src="/add-to-card.js" defer></script>
+    <script type="module" src="/add-place-to-card.js" defer></script>
+    <script type="module" src="/favouritePlace.js" defer></script>
+    <script type="module" src="/favourite-count.js"></script>
+    <script type="module" src="/mobile-header.js"></script>
+    <script>
+        function removeAll() {
+            localStorage.removeItem("lists");
+            localStorage.removeItem("listsPlan");
+            const places = document.querySelector("favourite-place");
+            const plans=document.querySelector('favourite-plan');
+            const count = document.querySelector("favourite-count");
+            const real = count.querySelector("span");
+            real.textContent = '0';
+            plans.jsonToCard();
+            places.jsonToCard();
+            plans.render_count();
+            places.render_count();
+            // comp.render_place_list();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+@import url('/general.css');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+ 
+body {
+    font-family: pangolin;
+    margin: 0;
+    padding: 0;
+}
+ 
+main {
+    width: 85%;
+    margin: auto;
+}
+ 
+.placeName  {
+    margin-top: 1rem;
+    & h2{
+        font-weight: lighter;
+        font-size: 1rem;
+        font-weight: bold
+    }
+}
+ 
+#hr1 {
+    height: 0.1rem;
+    background-image: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+    margin: 0.4rem 0;
+}
+ 
+.idk {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    & a{
+        text-decoration: none;
+    }
+}
+ 
+.undsen_heseg {
+    margin-top: 2%;
+    display: grid;
+    grid-row: auto;
+    grid-template-columns: 65% 30%;
+    grid-column-gap: 5%;
+    grid-row-gap: 5%;
+}
+ 
+.slideshow-container {
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem 0 var(--p-color);
+    & img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    & .favorite {
+        position: absolute;
+        background: none;
+        border: none;
+        right: 0;
+        width: 3rem;
+        height: 3rem;
+        color: var(--bg-light-color);
+    }
+    & .addToCard {
+        position: absolute;
+        background: none;
+        border: none;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: var(--bg-light-color);
+        border-radius: 0.5rem;
+        margin-left: -2.5rem;
+        margin-top: 0.8rem;
+        & i {
+          color: var(--bg-dark-color);
+        }
+      }
+      & .addToCard:hover{
+        background-color: var(--p-color);
+      }
+}
+
+.addToCard .fa-heart{
+    font-size: 1.3rem;
+  }
+ 
+/* Slideshow container */
+.slideshow-container {
+    /* max-height: 39rem; */
+    width: 100%;
+    position: relative;
+    margin: auto;
+    & .mySlides {
+        & img {
+            height: auto;
+            object-fit: cover;
+        }
+    }
+ 
+    /* Next & previous buttons */
+    & .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        width: auto;
+        padding: 0.8rem;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: 0.6s ease;
+        border-radius: 0 0.2rem 0.2rem 0;
+        user-select: none;
+    }
+ 
+    /* Position the "next button" to the right */
+    &  .next {
+      right: 0;
+      border-radius: 0.2rem 0 0 0.2rem;
+    }
+ 
+    /* On hover, add a black background color with a little bit see-through */
+    & .prev:hover, .next:hover {
+        background-color:var(--bg-dark-color);
+    }    
+      /* Fading animation */
+    & .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+}
+ 
+ 
+.allDot {
+    margin-top: -2rem;
+    & .dot {
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--deactive-star-color);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    & .active, .dot:hover {
+        background-color:var(--p-color);
+    }
+}
+ 
+aside {
+    border-radius: 1rem;
+    padding: 0.5rem 1em;
+    box-shadow: 0 0.4rem 0.5rem 0 var(--h-color);
+    & li , p, h3{
+        margin: 5%;
+    }
+    & img {
+        width: 1rem;
+    }
+    & p {
+        font-size: 0.7rem;
+    }
+    & li {
+        font-size: 0.8rem;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    & h3 {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    & div{
+        display: flex;
+        gap: 1rem;
+    }
+   
+}
+ 
+ 
+ 
+#taniltsuulga {
+    background-color: var(--bg-light-color);
+    text-align: justify;
+    & p {
+        margin:  0 2rem 1rem 2rem ;
+        font-weight: bold;
+    }
+    & h3 {
+        margin: 1rem;
+    }
+}
+ 
+.ratingPlace {
+    width: 100%;
+    padding: 1rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem ;
+    background-color: var(--bg-light-color);
+    & p {
+        font-size: 0.8rem;
+    }
+    & .ratingTitle{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem 0 1rem;
+        width: 100%;
+    }
+    & .myRating {
+        display: inline-block;
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        text-align: center;
+        & input[type="radio"] {
+            display: none;
+          }
+        & label {
+            display: inline-block;
+            padding: 0.3rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color:var(--deactive-star-color);
+          }
+    }
+   
+    &  .myRating label:hover,
+    .myRatinglabel:hover ~ label {
+      color: var(--active-star-color);
+    }
+   
+    & .myRating input[type="radio"]:checked ~ label {
+      color: var(--active-star-color);
+    }
+    & .ratingOnComment {
+        display: flex;
+        flex-direction: column;
+        height: 13rem;
+        overflow: auto;
+        padding: 0 0 0 1rem;
+        & h4 {
+            font-size: 1.2rem;
+        }
+    }
+    & #submit-button {
+        background: none;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+    }
+    & input {
+        width: 80%;
+        font-family: pangolin;
+    }
+ 
+}
+ 
+h2, h3, h4 {
+    color: var(--h-color);
+}
+ 
+address, time, p, ul , a{
+    color: var(--p-color);
+}
+ 
+.newPlaces {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 30% 30% 30% ;
+    gap: 2rem;
+    & .subNewPlaces {
+        display: grid;
+        grid-template-columns: 50% 50%  ;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 1.4rem;
+        & meter {
+            position: absolute;
+            margin-left:-5.5rem;
+            margin-top: 0.5rem;
+            color: var(--bg-light-color);
+            & i {
+              color:var(--bg-light-color);
+            }
+          }
+          & .addToCard {
+            background: none;
+            border-radius: 0.5rem;
+            border: none;
+            width: 1.8rem;
+            height: 1.8rem;
+            & i {
+              color: var(--bg-dark-color);
+            }
+          }
+ 
+          & .addToCard:hover{
+            background-color: var(--bg-dark-color);
+          }
+        & .details {
+            flex: 1;
+            margin: 1rem;
+            & .miniTitle {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+              }
+            & .value{
+              margin-top: 2%;
+              text-align: center;
+              border-radius: 0.5rem;
+          }
+           
+        }
+    }
+    & .subNewPlaces img {
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+    }
+    & i {
+        color: #666666;
+    }
+}
+ 
+ 
+article {
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    & img {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+ 
+ /* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 0.7rem}
+  }
+ 
+/* Responsive style */
+@media (max-width: 768px) {
+    /* Adjust main container */
+    main {
+        width: 90%;
+        margin: 0.6rem auto;
+    }
+ 
+    /* Stack sections vertically in .undsen_heseg */
+    .undsen_heseg {
+        grid-template-columns: 1fr;
+        grid-row-gap: 1.4rem;
+    }
+ 
+ 
+    /* Adjust text and image sizes */
+    h2, h3, h4 {
+        font-size: smaller;
+    }
+ 
+    /* Adjust layout for .similarPlans */
+    .newPlaces section {
+        flex-direction: column;
+    }
+ 
+    /* Make images responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+@media (max-width: 1150px) {
+    .newPlaces {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+}
+@media (max-width: 550px) {
+    .mySlides .addToCard .fa-heart{
+        font-size: 1rem;
+    }
+    .mySlides .addToCard {
+        width: 1.5rem;
+        height: 1.4rem;
+    }
+}
+@media (max-width: 1037px) {
+    .ratingPlace  .myRating label {
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 816px) {
+    .ratingPlace  .myRating label {
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 768px) {
+    .newPlaces {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .ratingPlace  .myRating label {
+        font-size: 1rem;
+    }
+}
+ 
+ 
+ 
